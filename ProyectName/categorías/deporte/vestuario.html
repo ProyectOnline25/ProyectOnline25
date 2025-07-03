@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Vestuario | Mi Proyecto</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+
+    .filters select {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-body h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card-body a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MiProyecto</div>
+    <a href="../../index.html" style="color:white; text-decoration:none;">← Volver al inicio</a>
+  </header>
+
+  <main class="container">
+    <h1 style="text-align:center; margin-bottom:1rem;">Catálogo de Vestuario Deportivo</h1>
+
+    <div class="filters">
+      <label>Color:
+        <select id="color-filter">
+          <option value="todos">Todos</option>
+          <option value="negro">Negro</option>
+          <option value="blanco">Blanco</option>
+          <option value="azul">Azul</option>
+        </select>
+      </label>
+
+      <label>Talla:
+        <select id="talla-filter">
+          <option value="todas">Todas</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+        </select>
+      </label>
+    </div>
+
+   <div class="grid" id="product-grid">
+  <div class="card" data-color="negro" data-talla="m">
+    <img src="https://via.placeholder.com/400x200?text=Camiseta+T%C3%A9cnica" alt="Camiseta técnica">
+    <div class="card-body">
+      <h3>Camiseta técnica transpirable</h3>
+      <p>€19.99</p>
+      <a href="https://afiliado.com/camiseta-tecnica" target="_blank">Comprar</a>
+    </div>
+  </div>
+
+  <div class="card" data-color="negro" data-talla="l">
+    <img src="https://via.placeholder.com/400x200?text=Leggins+Compresi%C3%B3n" alt="Leggins">
+    <div class="card-body">
+      <h3>Leggins de compresión deportivos</h3>
+      <p>€24.99</p>
+      <a href="https://afiliado.com/leggins-compresion" target="_blank">Comprar</a>
+    </div>
+  </div>
+
+  <div class="card" data-color="azul" data-talla="l">
+    <img src="https://via.placeholder.com/400x200?text=Sudadera+T%C3%A9rmica" alt="Sudadera">
+    <div class="card-body">
+      <h3>Sudadera térmica entrenamiento</h3>
+      <p>€34.95</p>
+      <a href="https://afiliado.com/sudadera-termica" target="_blank">Comprar</a>
+    </div>
+  </div>
+
+  <div class="card" data-color="blanco" data-talla="s">
+    <img src="https://via.placeholder.com/400x200?text=Top+Deportivo" alt="Top">
+    <div class="card-body">
+      <h3>Top deportivo para mujer</h3>
+      <p>€15.50</p>
+      <a href="https://afiliado.com/top-deportivo" target="_blank">Comprar</a>
+    </div>
+  </div>
+
+  <div class="card" data-color="negro" data-talla="m">
+    <img src="https://via.placeholder.com/400x200?text=Shorts+Running" alt="Shorts">
+    <div class="card-body">
+      <h3>Shorts de running ultraligeros</h3>
+      <p>€17.90</p>
+      <a href="https://afiliado.com/shorts-running" target="_blank">Comprar</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MiProyecto</p>
+  </footer>
+
+  <script>
+    const colorFilter = document.getElementById("color-filter");
+    const tallaFilter = document.getElementById("talla-filter");
+    const cards = document.querySelectorAll(".card");
+
+    function aplicarFiltros() {
+      const color = colorFilter.value;
+      const talla = tallaFilter.value;
+
+      cards.forEach(card => {
+        const cardColor = card.getAttribute("data-color");
+        const cardTalla = card.getAttribute("data-talla");
+
+        const mostrarColor = color === "todos" || color === cardColor;
+        const mostrarTalla = talla === "todas" || talla === cardTalla;
+
+        if (mostrarColor && mostrarTalla) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    colorFilter.addEventListener("change", aplicarFiltros);
+    tallaFilter.addEventListener("change", aplicarFiltros);
+  </script>
+
+</body>
+</html>

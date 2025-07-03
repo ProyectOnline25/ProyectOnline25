@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deporte | Mi Proyecto</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-body h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card-body a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MiProyecto</div>
+    <a href="../../index.html" style="color:white; text-decoration:none;">Volver al inicio</a>
+  </header>
+
+  <main class="container">
+    <h1 style="text-align:center; margin-bottom:2rem;">Categorías de Deporte</h1>
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200?text=Vestuario" alt="Vestuario">
+        <div class="card-body">
+          <h3>Vestuario</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200?text=Accesorios" alt="Accesorios">
+        <div class="card-body">
+          <h3>Accesorios</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200?text=Maquinaria" alt="Maquinaria">
+        <div class="card-body">
+          <h3>Maquinaria</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200?text=Pesas+y+Discos" alt="Pesas y Discos">
+        <div class="card-body">
+          <h3>Pesas y Discos</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200?text=Equipo+Gimnasio" alt="Equipo gimnasio">
+        <div class="card-body">
+          <h3>Equipo gimnasio</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200?text=Escalada+Montaña" alt="Escalada y montaña">
+        <div class="card-body">
+          <h3>Escalada y montaña</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200?text=Calistenia" alt="Calistenia">
+        <div class="card-body">
+          <h3>Calistenia</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MiProyecto</p>
+  </footer>
+
+</body>
+</html>
